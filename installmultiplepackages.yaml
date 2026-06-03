@@ -1,20 +1,22 @@
-- name: install and run nginx and apache
+- name: install and run nginx,git and apache
   hosts: web
   become: yes
 
   tasks:
-    - name: install nginx and apache
+    - name: install nginx,git,apache
       yum:
         name:
           - nginx
+          - git
           - httpd
         state: present
 
-    - name: run and enabled nginx and apache
+    - name: start and enabled nginx,apache
       service:
         name: "{{ item }}"
         state: started
         enabled: yes
+      
       loop:
         - nginx
         - httpd
