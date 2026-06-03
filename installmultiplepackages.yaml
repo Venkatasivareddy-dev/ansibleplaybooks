@@ -8,7 +8,6 @@
         name:
           - nginx
           - git
-          - httpd
         state: present
 
     - name: start and enabled nginx,apache
@@ -19,4 +18,3 @@
       
       loop:
         - nginx
-        - httpd
