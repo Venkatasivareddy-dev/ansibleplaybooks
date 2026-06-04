@@ -1,6 +1,6 @@
 - name: install and run docker
   hosts: local
-  connection: localhost
+  connection: local
   become: yes
 
   tasks:
