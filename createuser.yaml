@@ -1,5 +1,5 @@
 - name: create user
-  hosts: webservers
+  hosts: web
   become: yes
 
   tasks:
