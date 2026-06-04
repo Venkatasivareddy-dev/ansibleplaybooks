@@ -6,4 +6,5 @@
   - name: create user
     user:
       name: venkat
+      password: "{{ 'Welcome@2026' | password_hash( 'sha512' ) }}"
       state: present
