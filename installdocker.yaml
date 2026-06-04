@@ -5,11 +5,11 @@
 
   tasks:
   - name: Install docker
-    ansible.buildin.package:
+    ansible.builtin.package:
       name: docker
       state: present
   - name: start and run docker
-    ansible.buildin.service:
+    ansible.builtin.service:
       name: docker
       state: started
       enabled: yes
