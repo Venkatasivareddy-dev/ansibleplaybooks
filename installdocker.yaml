@@ -1,0 +1,15 @@
+- name: install and run docker
+  hosts: local
+  connection: localhost
+  become: yes
+
+  tasks:
+  - name: Install docker
+    ansible.builin.package:
+      name: docker
+      state: present
+  - name: start and run docker
+    ansible.builin.service:
+      name: docker
+      state: started
+      enabled: yes

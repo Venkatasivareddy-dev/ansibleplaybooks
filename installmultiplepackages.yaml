@@ -1,3 +1,21 @@
+- name: install and run nginx,git
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install 
+      ansible.builtin.package:
+        name:
+          - nginx
+          - git
+        state: present
+    - name: start and enable nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+
 - name: install and run nginx,git and apache
   hosts: web
   become: yes
