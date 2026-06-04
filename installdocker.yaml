@@ -1,15 +1,15 @@
-- name: install and run docker
+- name: install and run nginx
   hosts: local
   connection: local
   become: yes
 
   tasks:
-  - name: Install docker
+  - name: Install nginx
     ansible.builtin.package:
-      name: docker
+      name: nginx
       state: present
-  - name: start and run docker
+  - name: start and run nginx
     ansible.builtin.service:
-      name: docker
+      name: nginx
       state: started
       enabled: yes
