@@ -1,6 +1,5 @@
 - name: Install and run nginx
   hosts: allservers
-  connection: local
   become: yes
 
   tasks:
