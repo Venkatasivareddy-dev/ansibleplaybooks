@@ -9,6 +9,6 @@
         state: stopped
     
     - name: uninstall nginx
-      ansible.builtin.packages:
+      ansible.builtin.package:
         name: nginx
         state: absent
