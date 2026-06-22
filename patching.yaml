@@ -7,3 +7,7 @@
       ansible.builtin.package:
         name: "*"
         state: latest
+
+    - name: reboot the system
+      ansible.builtin.reboot:
+        reboot_timeout: 600
