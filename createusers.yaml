@@ -7,6 +7,7 @@
       ansible.builtin.user:
         name: siva
         shell: /bin/bash
+        password: "{{ 'Welcome@2026' | password_hash( 'sha512' ) }}"
         groups: wheel
         append: yes
         state: present
