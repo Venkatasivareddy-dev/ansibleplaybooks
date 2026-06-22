@@ -1,0 +1,16 @@
+- name: Apply system updates
+  hosts: allservers
+  become: yes
+
+  tasks:
+    - name: update all packages
+      ansible.builtin.package:
+        name: "*"
+        state: latest
+
+    - name: reboot the system
+      ansible.builtin.reboot:
+        reboot_timeout: 600
+
+    - name: verify connectivity
+      ansible.builtin.ping:

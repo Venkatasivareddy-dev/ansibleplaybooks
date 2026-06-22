@@ -1,5 +1,5 @@
 - name: Install common packages
-  hosts: allservers
+  hosts: web
   become: yes
 
   tasks:
