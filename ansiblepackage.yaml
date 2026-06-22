@@ -1,12 +1,18 @@
-  - name: Install ansible package
+  - name: Install nginx package
     hosts: local
     become: yes
 
     tasks:
-      - name: Install ansible
+      - name: Install nginx
         ansible.builtin.package:
-          name: ansible
+          name: nginx
           state: present
+
+      - name: Start and enable nginx
+        ansible.builtin.service:
+          name: nginx
+          state: started
+          enabled: yes
 
 
     
