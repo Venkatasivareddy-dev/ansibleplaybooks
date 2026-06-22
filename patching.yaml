@@ -1,0 +1,9 @@
+- name: Apply system updates
+  hosts: allservers
+  become: yes
+
+  tasks:
+    - name: update all packages
+      ansible.builtin.package:
+        name: "*"
+        state: latest
