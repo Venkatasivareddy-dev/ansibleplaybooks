@@ -1,5 +1,5 @@
   - name: Install nginx package
-    hosts: local
+    hosts: allservers
     become: yes
 
     tasks:
