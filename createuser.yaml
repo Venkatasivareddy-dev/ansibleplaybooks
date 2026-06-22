@@ -4,7 +4,7 @@
 
   tasks:
   - name: create user
-    user:
+    ansible.builtin.user:
       name: venkat
       password: "{{ 'Welcome@2026' | password_hash( 'sha512' ) }}"
       state: present

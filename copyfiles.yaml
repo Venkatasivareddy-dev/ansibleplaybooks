@@ -4,6 +4,6 @@
 
   tasks:
   - name: copy files from source file on ansible server to destination on target servers
-    copy:
+    ansible.builtin.copy:
       src: /home/ec2-user/ansibleplaybooks/index.html
       dest: /tmp
