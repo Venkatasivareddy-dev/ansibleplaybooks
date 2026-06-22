@@ -1,0 +1,12 @@
+- name: Create application user
+  hosts: allservers
+  become: yes
+
+  tasks:
+    - name: create user
+      ansible.builtin.user:
+        name: siva
+        shell: /bin/bash
+        groups: wheel
+        append: yes
+        state: present
