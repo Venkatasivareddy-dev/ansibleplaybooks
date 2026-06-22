@@ -1,5 +1,5 @@
 - name: Apply system updates
-  hosts: yes
+  hosts: web
   become: yes
 
   tasks:
