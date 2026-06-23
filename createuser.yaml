@@ -5,6 +5,9 @@
   tasks:
   - name: create user
     ansible.builtin.user:
-      name: venkat
-      password: "{{ 'Welcome@2026' | password_hash( 'sha512' ) }}"
-      state: present
+        name: siva
+        shell: /bin/bash
+        password: "{{ 'Welcome@2026' | password_hash( 'sha512' ) }}"
+        groups: wheel
+        append: yes
+        state: present
