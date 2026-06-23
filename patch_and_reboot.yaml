@@ -10,7 +10,7 @@
 
     - name: reboot the system
       ansible.builtin.reboot:
-        reboot_timeout: 600
+        reboot_timeout: 100
 
     - name: verify connectivity
       ansible.builtin.ping:
