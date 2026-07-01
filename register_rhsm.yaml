@@ -1,0 +1,11 @@
+- name: Register RHEL server with Red Hat Subscription Manager
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Register with RHSM
+      redhat_subscription:
+        state: present
+        username: venkata.sivareddy@wipro.com
+        password: Sivareddy@@421
+        auto_attach: true
