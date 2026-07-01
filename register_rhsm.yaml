@@ -11,6 +11,6 @@
     - name: Register with RHSM
       redhat_subscription:
         state: present
-        username: "your_username"
+        username: "venkata.sivareddy@wipro.com"
         password: "your_password"
         auto_attach: true
