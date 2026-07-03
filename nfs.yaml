@@ -1,0 +1,9 @@
+- name: Install nfs packages
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install nfs packages
+      ansible.builtin.package:
+        name: nfs-untils
+        state: present
