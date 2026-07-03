@@ -33,4 +33,10 @@
             endscript 
           }
 
-    - name: 
+    - name: Verify logrotate configuration
+      command: logrotate -d /etc/logrotate.d/syslog
+      register: output
+      changed_when: false
+    - name: Display verification output
+      debug:
+        var: output.stdout
