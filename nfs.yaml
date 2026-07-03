@@ -5,5 +5,5 @@
   tasks:
     - name: Install nfs packages
       ansible.builtin.package:
-        name: nfs-untils
+        name: nfs-utils
         state: present
