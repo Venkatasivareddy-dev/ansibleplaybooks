@@ -1,0 +1,36 @@
+- name: configure logrotate for syslog
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Backup exiscting syslog logrotate configuration
+      copy:
+        src: /etc/logrotate.d/syslog
+        dest: /etc/logrotate.d/syslog.Backup
+        remote_src: yes
+
+    - name: configure syslog rotation
+      copy:
+        dest: /etc/logrotate.d/syslog
+        owner: root
+        group: root
+        mode: '0644'
+        content: |
+          /var/log/secrure
+          /var/log/kern.log
+          /var/log/mail.log
+          /var/log/cron
+          /var/log/spooler
+          /var/log/boot.log
+          {
+            size 2G
+            rotate 5
+            missingok
+            create 0644
+            sharedscripts
+            postrotate
+            /sbin/service rsyslog restart >/dev/null 2>&1
+            endscript 
+          }
+
+    - name: 
