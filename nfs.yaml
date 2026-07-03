@@ -7,3 +7,9 @@
       ansible.builtin.package:
         name: nfs-utils
         state: present
+      
+    - name: start nfs and enabled 
+      ansible.builtin.service:
+        name: nfs-utils
+        state: started
+        become: yes
