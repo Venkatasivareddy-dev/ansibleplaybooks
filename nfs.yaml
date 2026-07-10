@@ -8,6 +8,12 @@
         name: nfs-utils
         state: present
       
+    - name: Install nfs packages
+      ansible.builtin.package:
+        name: rpcbind
+        state: started
+        enabled: yes
+      
     - name: start nfs and enabled 
       ansible.builtin.service:
         name: nfs-utils
