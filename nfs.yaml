@@ -1,21 +1,25 @@
-- name: Install nfs packages
+---
+- name: Install NFS packages
   hosts: web
   become: yes
 
   tasks:
-    - name: Install nfs packages
+
+    - name: Install NFS packages
       ansible.builtin.package:
-        name: nfs-utils
+        name:
+          - nfs-utils
+          - rpcbind
         state: present
-      
-    - name: Install nfs packages
-      ansible.builtin.package:
+
+    - name: Enable and start rpcbind service
+      ansible.builtin.service:
         name: rpcbind
         state: started
         enabled: yes
-      
-    - name: start nfs and enabled 
+
+    - name: Enable and start NFS service
       ansible.builtin.service:
-        name: nfs-utils
+        name: nfs-server
         state: started
         enabled: yes
