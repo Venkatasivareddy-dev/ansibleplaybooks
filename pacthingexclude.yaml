@@ -1,0 +1,19 @@
+- name: perform the pacthing on 3 servers
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: perform the servers to latest version and exclude kernel version
+      ansible.builtin.package:
+        name: "*"
+        state: latest
+        exclude: 
+          - kernel
+
+    - name: reboot the server
+      ansible.builtin.reboot:
+        reboot_timeout: 200
+
+    - name: ping the servers
+      ansible.builtin.ping:
+      
